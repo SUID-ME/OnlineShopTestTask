@@ -9,6 +9,7 @@ namespace PulsarTestTask.ViewModels
 {
     public class NavigationMenuVM : ViewModelBase
     {
+        #region BindingItems
         [Reactive] public bool IsExpanded { get; private set; }
         [Reactive] public Avalonia.Layout.HorizontalAlignment HorizontalAlignment { get; private set; } = Avalonia.Layout.HorizontalAlignment.Center;
         [Reactive] public MenuItem SelectedItem { get; set; }
@@ -16,7 +17,9 @@ namespace PulsarTestTask.ViewModels
         public ReactiveCommand<Unit, Unit> ToggleMenuCommand { get; }
 
         public ObservableCollection<MenuItem> MenuItems { get; private set; }
+        #endregion BindingItems
 
+        #region Constructor
         public NavigationMenuVM()
         {
             ToggleMenuCommand = ReactiveCommand.Create(() =>
@@ -61,5 +64,6 @@ namespace PulsarTestTask.ViewModels
                 }
             ];
         }
+        #endregion Constructor
     }
 }

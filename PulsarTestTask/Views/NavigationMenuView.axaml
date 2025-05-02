@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="using:PulsarTestTask.ViewModels"
 			 x:DataType="vm:NavigationMenuVM"
-             mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="150" d:DesignHeight="450"
              x:Class="PulsarTestTask.Views.NavigationMenuView"
 			 x:Name="NavControl">
 	<Design.DataContext>

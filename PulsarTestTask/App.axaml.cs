@@ -3,7 +3,6 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using PulsarTestTask.ViewModels;
 using PulsarTestTask.Views;
-using ReactiveUI;
 
 namespace PulsarTestTask
 {

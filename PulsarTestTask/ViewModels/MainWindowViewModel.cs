@@ -2,6 +2,11 @@
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting { get; } = "Welcome to Avalonia!";
+        public MainWindowViewModel()
+        {
+            NavigationVM = new();
+        }
+
+        public NavigationMenuVM NavigationVM { get; set; }
     }
 }

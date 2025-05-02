@@ -1,0 +1,15 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:PulsarTestTask.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="PulsarTestTask.Views.NavigationTitle"
+			 x:DataType="vm:NavigationMenuVM">
+	<Border CornerRadius="10" Background="PeachPuff">
+		<StackPanel Orientation="Horizontal" Margin="10" Spacing="5" VerticalAlignment="Center">
+			<TextBlock Text="Выбранная страница:" FontSize="16"/>
+			<TextBlock Text="{Binding SelectedItem.Title}" FontSize="16"/>
+		</StackPanel>
+	</Border>
+</UserControl>

@@ -1,0 +1,53 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:PulsarTestTask.ViewModels"
+			 x:DataType="vm:NavigationMenuVM"
+             mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="450"
+             x:Class="PulsarTestTask.Views.NavigationMenuView"
+			 x:Name="NavControl">
+	<Design.DataContext>
+		<vm:NavigationMenuVM IsExpanded="True"/>
+	</Design.DataContext>
+
+	<Border CornerRadius="10" Background="LightBlue">
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<!--#region MenuButton-->
+			<StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="5" Margin="10">
+				<Border BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+					<Button Width="40" Height="40"
+							Command="{Binding ToggleMenuCommand}">
+						<PathIcon Data="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"/>
+					</Button>
+				</Border>
+				<TextBlock Text="Меню" IsVisible="{Binding IsExpanded}" VerticalAlignment="Center"/>
+			</StackPanel>
+			<!--#endregion MenuButton-->
+
+			<!--#region NavigationButtons-->
+			<ListBox Grid.Row="1" Background="LightBlue" CornerRadius="10"
+					 ItemsSource="{Binding MenuItems}" SelectedItem="{Binding SelectedItem}">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<Border BorderBrush="Black" BorderThickness="1" CornerRadius="5" MinHeight="40" MinWidth="40">
+							<StackPanel Orientation="Horizontal" Spacing="5" Margin="5"
+										HorizontalAlignment="{Binding DataContext.HorizontalAlignment, ElementName=NavControl}">
+								<PathIcon Data="{Binding IconPath}"/>
+								<TextBlock Text="{Binding Title}" VerticalAlignment="Center"
+										   IsVisible="{Binding DataContext.IsExpanded, 
+                                                ElementName=NavControl}"/>
+							</StackPanel>
+						</Border>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+			<!--#endregion NavigationButtons-->
+		</Grid>
+	</Border>
+</UserControl>

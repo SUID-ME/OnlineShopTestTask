@@ -1,5 +1,4 @@
-﻿using Avalonia.Controls;
-using ReactiveUI;
+﻿using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -12,11 +11,11 @@ namespace PulsarTestTask.ViewModels
         #region BindingItems
         [Reactive] public bool IsExpanded { get; private set; }
         [Reactive] public Avalonia.Layout.HorizontalAlignment HorizontalAlignment { get; private set; } = Avalonia.Layout.HorizontalAlignment.Center;
-        [Reactive] public MenuItem SelectedItem { get; set; }
+        [Reactive] public MenuItemVM SelectedItem { get; set; }
 
         public ReactiveCommand<Unit, Unit> ToggleMenuCommand { get; }
 
-        public ObservableCollection<MenuItem> MenuItems { get; private set; }
+        public ObservableCollection<MenuItemVM> MenuItems { get; private set; }
         #endregion BindingItems
 
         #region Constructor
@@ -36,8 +35,6 @@ namespace PulsarTestTask.ViewModels
                 });
 
             CreateMenuItems();
-            Button button = new();
-            button.HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center;
             SelectedItem = MenuItems.First();
         }
 

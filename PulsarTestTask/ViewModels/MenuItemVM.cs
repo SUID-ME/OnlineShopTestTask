@@ -3,7 +3,7 @@ using ReactiveUI.Fody.Helpers;
 
 namespace PulsarTestTask.ViewModels
 {
-    public class MenuItem : ReactiveObject
+    public class MenuItemVM : ReactiveObject
     {
         [Reactive]
         public string Title { get; set; }

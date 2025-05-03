@@ -11,7 +11,7 @@
 		<vm:NavigationVM IsExpanded="True"/>
 	</Design.DataContext>
 
-	<Border CornerRadius="10" Background="LightBlue">
+	<Border CornerRadius="5" Background="LightBlue" BorderBrush="Gray" BorderThickness="1">
 		<Grid>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto"/>

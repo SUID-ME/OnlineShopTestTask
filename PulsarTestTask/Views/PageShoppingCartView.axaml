@@ -6,7 +6,5 @@
              x:Class="PulsarTestTask.Views.PageShoppingCartView"
 			 xmlns:vm="using:PulsarTestTask.ViewModels"
 			 x:DataType="vm:PageShoppingCartVM">
-	<Border Background="LightGreen" CornerRadius="10">
-		<TextBlock Text="ShoppingCart" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-	</Border>
+	<TextBlock Text="ShoppingCart" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 </UserControl>

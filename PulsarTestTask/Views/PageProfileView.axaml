@@ -6,7 +6,5 @@
              x:Class="PulsarTestTask.Views.PageProfileView"
 			 xmlns:vm="using:PulsarTestTask.ViewModels"
 			 x:DataType="vm:PageProfileVM">
-	<Border Background="LightGreen" CornerRadius="10">
-		<TextBlock Text="UserProfile" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-	</Border>
+	<TextBlock Text="UserProfile" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 </UserControl>

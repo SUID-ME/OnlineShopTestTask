@@ -16,12 +16,12 @@ namespace PulsarTestTask.ViewModels
         public PageShopVM() { 
             ShopItems.Clear();
             ShopItems.AddRange(App.ShopContent.GetContent());
-            _ = LoadBitmaps();
+            LoadBitmaps();
         }
 
         public ObservableCollection<ShopItem> ShopItems { get; } = [];
 
-        private async Task LoadBitmaps()
+        private void LoadBitmaps()
         {
             foreach (var item in ShopItems)
             {
@@ -30,18 +30,25 @@ namespace PulsarTestTask.ViewModels
                     continue;
                 }
 
-                try
+                _ = FormBitmapLogic(item);
+            }
+        }
+
+
+        private async Task FormBitmapLogic(ShopItem item)
+        {
+            try
+            {
+                var bitmap = await LoadImageFromUrl(item.URL);
+                if (bitmap != null)
                 {
-                    var bitmap = await LoadImageFromUrl(item.URL);
-                    if (bitmap != null)
-                    {
-                        item.Bitmap = bitmap;
-                    }
-                } catch (Exception ex)
-                {
-                    Debug.WriteLine(ex);
-                    continue;
+                    item.Bitmap = bitmap;
                 }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                return;
             }
         }
 

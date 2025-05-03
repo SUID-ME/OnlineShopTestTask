@@ -1,6 +1,6 @@
 ﻿namespace PulsarTestTask.ViewModels
 {
-    public class PageShoppingCartVM : ViewModelBase
+    public class PageShopVM : ViewModelBase
     {
     }
 }

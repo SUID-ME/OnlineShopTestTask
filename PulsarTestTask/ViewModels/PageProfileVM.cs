@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PulsarTestTask.ViewModels
+﻿namespace PulsarTestTask.ViewModels
 {
-    internal class PageProfileVM
+    public class PageProfileVM : ViewModelBase
     {
+
     }
 }

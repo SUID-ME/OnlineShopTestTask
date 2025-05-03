@@ -25,6 +25,5 @@ namespace PulsarTestTask
 
             base.OnFrameworkInitializationCompleted();
         }
-
     }
 }

@@ -3,6 +3,7 @@ using ReactiveUI.Fody.Helpers;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive;
+using System.Reactive.Linq;
 
 namespace PulsarTestTask.ViewModels
 {
@@ -45,19 +46,22 @@ namespace PulsarTestTask.ViewModels
                 new()
                 {
                     Title = "Магазин",
-                    IconPath = "M12,3L2,12H5V20H19V12H22L12,3Z"
+                    IconPath = "M12,3L2,12H5V20H19V12H22L12,3Z",
+                    ViewModel = new PageShopVM()
                 },
 
                 new ()
                 {
                     Title = "Корзина",
-                    IconPath = "M10,2H14A1,1 0 0,1 15,3V6H13V4H11V6H9V3A1,1 0 0,1 10,2M7,7H17V21A2,2 0 0,1 15,23H9A2,2 0 0,1 7,21V7Z"
+                    IconPath = "M10,2H14A1,1 0 0,1 15,3V6H13V4H11V6H9V3A1,1 0 0,1 10,2M7,7H17V21A2,2 0 0,1 15,23H9A2,2 0 0,1 7,21V7Z",
+                    ViewModel = new PageShoppingCartVM()
                 },
 
                 new ()
                 {
                     Title = "Профиль",
-                    IconPath = "M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
+                    IconPath = "M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z",
+                    ViewModel = new PageProfileVM()
                 }
             ];
         }

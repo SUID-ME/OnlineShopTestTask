@@ -37,8 +37,8 @@
     <Compile Update="Views\PageShoppingCartView.axaml.cs">
       <DependentUpon>PageShoppingCartView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\PageStoreView.axaml.cs">
-      <DependentUpon>PageStoreView.axaml</DependentUpon>
+    <Compile Update="Views\PageShopView.axaml.cs">
+      <DependentUpon>PageShopView.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

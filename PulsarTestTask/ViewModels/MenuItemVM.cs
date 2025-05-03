@@ -1,5 +1,4 @@
-﻿using ReactiveUI;
-using ReactiveUI.Fody.Helpers;
+﻿using ReactiveUI.Fody.Helpers;
 
 namespace PulsarTestTask.ViewModels
 {
@@ -9,6 +8,6 @@ namespace PulsarTestTask.ViewModels
         public string Title { get; set; }
         [Reactive]
         public string IconPath { get; set; }
-        //public required IRoutableViewModel ViewModel { get; init; }
+        public required ViewModelBase ViewModel { get; init; }
     }
 }

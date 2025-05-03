@@ -18,18 +18,20 @@
 	<DockPanel>
 		<views:NavigationMenuView DataContext="{Binding NavigationVM}" DockPanel.Dock="Left"/>
 		<views:NavigationTitleView DataContext="{Binding NavigationVM}" DockPanel.Dock="Top"/>
-		<ContentControl Content="{Binding NavigationVM.SelectedItem.ViewModel}">
-			<ContentControl.DataTemplates>
-				<DataTemplate DataType="{x:Type vm:PageShopVM}">
-					<views:PageShopView/>
-				</DataTemplate>
-				<DataTemplate DataType="{x:Type vm:PageShoppingCartVM}">
-					<views:PageShoppingCartView/>
-				</DataTemplate>
-				<DataTemplate DataType="{x:Type vm:PageProfileVM}">
-					<views:PageProfileView/>
-				</DataTemplate>
-			</ContentControl.DataTemplates>
-		</ContentControl>
+		<Border Background="LightGreen" CornerRadius="10">
+			<ContentControl Content="{Binding NavigationVM.SelectedItem.ViewModel}">
+				<ContentControl.DataTemplates>
+					<DataTemplate DataType="{x:Type vm:PageShopVM}">
+						<views:PageShopView/>
+					</DataTemplate>
+					<DataTemplate DataType="{x:Type vm:PageShoppingCartVM}">
+						<views:PageShoppingCartView/>
+					</DataTemplate>
+					<DataTemplate DataType="{x:Type vm:PageProfileVM}">
+						<views:PageProfileView/>
+					</DataTemplate>
+				</ContentControl.DataTemplates>
+			</ContentControl>
+		</Border>
 	</DockPanel>
 </Window>

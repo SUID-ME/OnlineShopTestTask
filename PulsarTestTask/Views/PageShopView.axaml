@@ -2,11 +2,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="800"
              x:Class="PulsarTestTask.Views.PageShopView"
              xmlns:vm="using:PulsarTestTask.ViewModels"
 			 x:DataType="vm:PageShopVM">
-	<Border Background="LightGreen" CornerRadius="10">
-		<TextBlock Text="Store" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-	</Border>
+	<Design.DataContext>
+		<vm:PageShopVM/>
+	</Design.DataContext>
+
+	<ScrollViewer VerticalScrollBarVisibility="Auto">
+		<ItemsControl ItemsSource="{Binding ShopItems}">
+			<ItemsControl.ItemsPanel>
+				<ItemsPanelTemplate>
+					<WrapPanel Orientation="Horizontal"/>
+				</ItemsPanelTemplate>
+			</ItemsControl.ItemsPanel>
+
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<Border CornerRadius="10" Margin="5"
+							Background="LightCoral"
+							MinHeight="200" MinWidth="200">
+
+						<StackPanel VerticalAlignment="Bottom" Margin="10">
+							<Image Source="{Binding Bitmap}" MaxHeight="400" MaxWidth="400"/>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="{Binding Name}"/>
+								<TextBlock Text=": "/>
+								<TextBlock Text="{Binding Count}"/>
+							</StackPanel>
+							<Button Content="Купить" HorizontalAlignment="Center" BorderBrush="Black"/>
+						</StackPanel>
+					</Border>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+	</ScrollViewer>
 </UserControl>

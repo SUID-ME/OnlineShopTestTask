@@ -7,6 +7,6 @@
             NavigationVM = new();
         }
 
-        public NavigationMenuVM NavigationVM { get; set; }
+        public NavigationVM NavigationVM { get; set; }
     }
 }

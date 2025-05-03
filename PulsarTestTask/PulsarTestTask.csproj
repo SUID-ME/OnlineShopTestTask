@@ -26,4 +26,19 @@
     <PackageReference Include="Avalonia.ReactiveUI" Version="11.3.0" />
     <PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\NavigationTitleView.axaml.cs">
+      <DependentUpon>NavigationTitleView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\PageProfileView.axaml.cs">
+      <DependentUpon>PageProfileView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\PageShoppingCartView.axaml.cs">
+      <DependentUpon>PageShoppingCartView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\PageStoreView.axaml.cs">
+      <DependentUpon>PageStoreView.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

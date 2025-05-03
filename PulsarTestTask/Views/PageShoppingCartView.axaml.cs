@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace PulsarTestTask.Views;
 
-public partial class NavigationTitle : UserControl
+public partial class PageShoppingCartView : UserControl
 {
-    public NavigationTitle()
+    public PageShoppingCartView()
     {
         InitializeComponent();
     }

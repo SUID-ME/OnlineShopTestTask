@@ -3,11 +3,12 @@ using ReactiveUI.Fody.Helpers;
 
 namespace PulsarTestTask.ViewModels
 {
-    public class MenuItemVM : ReactiveObject
+    public class MenuItemVM : ViewModelBase
     {
         [Reactive]
         public string Title { get; set; }
         [Reactive]
         public string IconPath { get; set; }
+        //public required IRoutableViewModel ViewModel { get; init; }
     }
 }

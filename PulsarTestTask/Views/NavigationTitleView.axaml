@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="using:PulsarTestTask.ViewModels"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="100"
-             x:Class="PulsarTestTask.Views.NavigationTitle"
-			 x:DataType="vm:NavigationMenuVM">
+             x:Class="PulsarTestTask.Views.NavigationTitleView"
+			 x:DataType="vm:NavigationVM">
 	<Border CornerRadius="10" Background="PeachPuff">
 		<StackPanel Orientation="Horizontal" Margin="10" Spacing="5" VerticalAlignment="Center">
 			<TextBlock Text="Выбранная страница:" FontSize="16"/>

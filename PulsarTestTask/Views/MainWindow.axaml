@@ -17,7 +17,7 @@
 
 	<DockPanel>
 		<views:NavigationMenuView DataContext="{Binding NavigationVM}" DockPanel.Dock="Left"/>
-		<views:NavigationTitle DataContext="{Binding NavigationVM}" DockPanel.Dock="Top"/>
-		<views:PageStore DockPanel.Dock="Bottom"/>
+		<views:NavigationTitleView DataContext="{Binding NavigationVM}" DockPanel.Dock="Top"/>
+		<views:PageStoreView DockPanel.Dock="Bottom"/>
 	</DockPanel>
 </Window>

@@ -18,7 +18,7 @@
 	<DockPanel>
 		<views:NavigationMenuView DataContext="{Binding NavigationVM}" DockPanel.Dock="Left"/>
 		<views:NavigationTitleView DataContext="{Binding NavigationVM}" DockPanel.Dock="Top"/>
-		<Border Background="LightGreen" CornerRadius="10">
+		<Border Background="#aca1d7" CornerRadius="10">
 			<ContentControl Content="{Binding NavigationVM.SelectedItem.ViewModel}">
 				<ContentControl.DataTemplates>
 					<DataTemplate DataType="{x:Type vm:PageShopVM}">

@@ -11,7 +11,8 @@
 		<vm:NavigationVM IsExpanded="True"/>
 	</Design.DataContext>
 
-	<Border CornerRadius="5" Background="LightBlue" BorderBrush="Gray" BorderThickness="1">
+	<Border CornerRadius="5" Background="LightBlue">
+		<!--BorderBrush="Gray" BorderThickness="1">-->
 		<Grid>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto"/>
@@ -31,7 +32,7 @@
 			<!--#endregion MenuButton-->
 
 			<!--#region NavigationButtons-->
-			<ListBox Grid.Row="1" Background="LightBlue" CornerRadius="10"
+			<ListBox Grid.Row="1" Background="LightBlue" MaxHeight="300" VerticalAlignment="Top"
 					 ItemsSource="{Binding MenuItems}" SelectedItem="{Binding SelectedItem}">
 				<ListBox.ItemTemplate>
 					<DataTemplate>

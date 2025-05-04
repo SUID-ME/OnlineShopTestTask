@@ -21,7 +21,7 @@
 			<ItemsControl.ItemTemplate>
 				<DataTemplate>
 					<Border CornerRadius="20" Margin="5"
-							Background="LightCoral"
+							Background="LightGreen"
 							MinHeight="200" MinWidth="200">
 
 						<StackPanel VerticalAlignment="Bottom" Margin="10">

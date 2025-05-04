@@ -7,7 +7,8 @@ namespace PulsarTestTask.ViewModels
 {
     public class CartContent : ViewModelBase
     {
-        public CartContent(ShopItem item, int count = 1) { 
+        public CartContent(ShopItem item, int count = 1)
+        {
             Name = item.Name;
             MaxCount = item.Count;
             Count = count;

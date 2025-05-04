@@ -1,23 +1,50 @@
 ﻿using Avalonia.Media.Imaging;
 using DynamicData;
 using PulsarTestTask.Models;
+using ReactiveUI;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Net.Http;
+using System.Net.NetworkInformation;
+using System.Reactive;
 using System.Threading.Tasks;
 
 namespace PulsarTestTask.ViewModels
 {
     public class PageShopVM : ViewModelBase
     {
+        #region Constructor
         public PageShopVM()
         {
+            BuyCommand = ReactiveCommand.Create<ShopItem>(BuyLogic);
+
             ShopItems.AddRange(App.ShopContent.GetContent());
             LoadBitmaps();
         }
+        #endregion Constructor
 
+        #region Bindings
         public ObservableCollection<ShopItem> ShopItems { get; } = [];
+
+        public ReactiveCommand<ShopItem, Unit> BuyCommand { get; set; }
+        #endregion Bindings
+
+        #region Methods
+        public void BuyLogic(ShopItem item)
+        {
+            CartContent? content = App.CartList.FirstOrDefault(x => x.Name == item.Name);
+            if (content != null)
+            {
+                content.Count++;
+            } else
+            {
+                content = new CartContent() { Name = item.Name, Count = 1 };
+                App.CartList.Add(content);
+            }
+            
+        }
 
         private void LoadBitmaps()
         {
@@ -31,7 +58,6 @@ namespace PulsarTestTask.ViewModels
                 _ = FormBitmapLogic(item);
             }
         }
-
 
         private async Task FormBitmapLogic(ShopItem item)
         {
@@ -50,7 +76,7 @@ namespace PulsarTestTask.ViewModels
             }
         }
 
-        public async Task<Bitmap?> LoadImageFromUrl(string url)
+        private async Task<Bitmap?> LoadImageFromUrl(string url)
         {
             try
             {
@@ -70,8 +96,9 @@ namespace PulsarTestTask.ViewModels
             }
             catch
             {
-                return null; // или вернуть заглушку
+                return null;
             }
         }
+        #endregion Methods
     }
 }

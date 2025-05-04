@@ -31,7 +31,9 @@
 								<TextBlock Text=": " FontSize="16"/>
 								<TextBlock Text="{Binding Count}" FontSize="16"/>
 							</StackPanel>
-							<Button Content="Купить" HorizontalAlignment="Center" BorderBrush="Black" FontSize="16"/>
+							<Button Content="Купить" HorizontalAlignment="Center" BorderBrush="Black" FontSize="16"
+									Command="{Binding $parent[ItemsControl].DataContext.BuyCommand}"
+									CommandParameter="{Binding}"/>
 						</StackPanel>
 					</Border>
 				</DataTemplate>

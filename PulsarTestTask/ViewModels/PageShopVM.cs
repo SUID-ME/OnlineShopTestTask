@@ -7,7 +7,6 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
-using System.Net.NetworkInformation;
 using System.Reactive;
 using System.Threading.Tasks;
 
@@ -38,12 +37,13 @@ namespace PulsarTestTask.ViewModels
             if (content != null)
             {
                 content.Count++;
-            } else
+            }
+            else
             {
                 content = new CartContent() { Name = item.Name, Count = 1 };
                 App.CartList.Add(content);
             }
-            
+
         }
 
         private void LoadBitmaps()

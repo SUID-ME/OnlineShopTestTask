@@ -8,7 +8,8 @@ namespace PulsarTestTask.ViewModels
     public class PageShoppingCartVM : ViewModelBase
     {
         #region Constructor
-        public PageShoppingCartVM() {
+        public PageShoppingCartVM()
+        {
             CartContent = App.CartList;
             CartListCount = CartContent.Count;
 

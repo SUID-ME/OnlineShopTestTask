@@ -10,7 +10,7 @@
 		<vm:PageShopVM/>
 	</Design.DataContext>
 
-	<ScrollViewer VerticalScrollBarVisibility="Auto">
+	<ScrollViewer VerticalScrollBarVisibility="Auto" Margin="20">
 		<ItemsControl ItemsSource="{Binding ShopItems}">
 			<ItemsControl.ItemsPanel>
 				<ItemsPanelTemplate>

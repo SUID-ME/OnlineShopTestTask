@@ -38,13 +38,19 @@
 			<ScrollViewer Margin="5" Grid.Row="1" VerticalScrollBarVisibility="Auto">
 				<DataGrid ItemsSource="{Binding CartContent}" AutoGenerateColumns="False">
 					<DataGrid.Styles>
-						<Style Selector="DataGridCell">
-							<Setter Property="HorizontalContentAlignment" Value="Center"/>
-							<Setter Property="VerticalContentAlignment" Value="Center"/>
-						</Style>
 						<Style Selector="DataGridColumnHeader">
 							<Setter Property="Background" Value="LightGreen"/>
 							<Setter Property="Foreground" Value="Black"/>
+						</Style>
+						<Style Selector="DataGridCell">
+							<Setter Property="HorizontalContentAlignment" Value="Center"/>
+							<Setter Property="VerticalContentAlignment" Value="Center"/>
+							<Setter Property="BorderBrush" Value="Black"/>
+							<Setter Property="BorderThickness" Value="0,0,1,1"/>
+						</Style>
+						<Style Selector="DataGrid">
+							<Setter Property="BorderThickness" Value="0"/>
+							<Setter Property="Background" Value="Transparent"/>
 						</Style>
 					</DataGrid.Styles>
 
@@ -53,7 +59,7 @@
 											Width="*"/>
 						<DataGridTextColumn Header="Кол-во" Binding="{Binding Count}"
 											Width="*"/>
-						<DataGridTemplateColumn Header="Есть в наличии" Width="*">
+						<DataGridTemplateColumn Header="Есть в наличии" Width="Auto">
 							<DataGridTemplateColumn.CellTemplate>
 								<DataTemplate>
 									<Path

@@ -1,10 +1,5 @@
-﻿using DynamicData;
-using PulsarTestTask.Models;
-using ReactiveUI.Fody.Helpers;
-using System.Collections.Generic;
+﻿using ReactiveUI.Fody.Helpers;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Reactive.Linq;
 
 namespace PulsarTestTask.ViewModels
 {

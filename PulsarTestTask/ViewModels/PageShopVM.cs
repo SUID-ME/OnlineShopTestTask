@@ -1,20 +1,18 @@
 ﻿using Avalonia.Media.Imaging;
 using DynamicData;
 using PulsarTestTask.Models;
+using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
-using ReactiveUI;
-using ReactiveUI.Fody.Helpers;
-using System.Diagnostics;
-using System;
 
 namespace PulsarTestTask.ViewModels
 {
     public class PageShopVM : ViewModelBase
     {
-        public PageShopVM() { 
-            ShopItems.Clear();
+        public PageShopVM()
+        {
             ShopItems.AddRange(App.ShopContent.GetContent());
             LoadBitmaps();
         }

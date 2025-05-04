@@ -6,5 +6,12 @@
              x:Class="PulsarTestTask.Views.PageShoppingCartView"
 			 xmlns:vm="using:PulsarTestTask.ViewModels"
 			 x:DataType="vm:PageShoppingCartVM">
-	<TextBlock Text="ShoppingCart" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+	<Design.DataContext>
+		<vm:PageShoppingCartVM/>
+	</Design.DataContext>
+
+	<Grid>
+		<DataGrid ItemsSource="{Binding CartContent}" AutoGenerateColumns="True"/>
+	</Grid>
 </UserControl>

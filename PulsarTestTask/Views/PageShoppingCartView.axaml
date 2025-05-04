@@ -5,11 +5,17 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="PulsarTestTask.Views.PageShoppingCartView"
 			 xmlns:vm="using:PulsarTestTask.ViewModels"
+			 xmlns:converters="using:PulsarTestTask.Converters"
 			 x:DataType="vm:PageShoppingCartVM">
 
 	<Design.DataContext>
 		<vm:PageShoppingCartVM/>
 	</Design.DataContext>
+
+	<UserControl.Resources>
+		<converters:BoolToGeometryConverter x:Key="BoolToGeometry"/>
+		<converters:BoolToBrushConverter x:Key="BoolToBrush"/>
+	</UserControl.Resources>
 
 	<Grid Margin="20">
 		<Grid.RowDefinitions>
@@ -17,23 +23,54 @@
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
 
+		<!--#region ItemCount-->
 		<Border Grid.Row="0" Margin="5" Background="LightGreen" CornerRadius="5" HorizontalAlignment="Left">
 			<StackPanel Orientation="Horizontal" Margin="10">
 				<TextBlock Text="Всего товаров: "/>
 				<TextBlock Text="{Binding CartListCount}"/>
 			</StackPanel>
 		</Border>
+		<!--#endregion ItemCount-->
 
-		<Border Grid.Row="1" Margin="5" Background="LightGreen" CornerRadius="5">
+		<!--#region CartTable-->
+		<Border Grid.Row="1" Margin="5" Background="LightGreen" CornerRadius="10"
+				VerticalAlignment="Top" HorizontalAlignment="Left">
 			<ScrollViewer Margin="5" Grid.Row="1" VerticalScrollBarVisibility="Auto">
-				<DataGrid ItemsSource="{Binding CartContent}" AutoGenerateColumns="False" HorizontalAlignment="Left">
+				<DataGrid ItemsSource="{Binding CartContent}" AutoGenerateColumns="False">
+					<DataGrid.Styles>
+						<Style Selector="DataGridCell">
+							<Setter Property="HorizontalContentAlignment" Value="Center"/>
+							<Setter Property="VerticalContentAlignment" Value="Center"/>
+						</Style>
+						<Style Selector="DataGridColumnHeader">
+							<Setter Property="Background" Value="LightGreen"/>
+							<Setter Property="Foreground" Value="Black"/>
+						</Style>
+					</DataGrid.Styles>
+
 					<DataGrid.Columns>
-						<DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
-						<DataGridTextColumn Header="Кол-во" Binding="{Binding Count}"/>
+						<DataGridTextColumn Header="Наименование" Binding="{Binding Name}" IsReadOnly="True" 
+											Width="*"/>
+						<DataGridTextColumn Header="Кол-во" Binding="{Binding Count}"
+											Width="*"/>
+						<DataGridTemplateColumn Header="Есть в наличии" Width="*">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Path
+										Width="16" Height="16"
+										Stretch="Uniform"
+										Data="{Binding IsAvailable, Converter={StaticResource BoolToGeometry}}"					
+										Stroke="{Binding IsAvailable, Converter={StaticResource BoolToBrush}}"
+										StrokeThickness="3"
+										StrokeLineCap="Round"/>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
 					</DataGrid.Columns>
 				</DataGrid>
 			</ScrollViewer>
 		</Border>
+		<!--#endregion CartTable-->
 	</Grid>
 
 

@@ -40,7 +40,7 @@ namespace PulsarTestTask.ViewModels
             }
             else
             {
-                content = new CartContent() { Name = item.Name, Count = 1 };
+                content = new CartContent(item);
                 App.CartList.Add(content);
             }
 

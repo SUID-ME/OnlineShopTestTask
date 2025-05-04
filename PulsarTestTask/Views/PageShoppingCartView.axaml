@@ -11,7 +11,30 @@
 		<vm:PageShoppingCartVM/>
 	</Design.DataContext>
 
-	<Grid>
-		<DataGrid ItemsSource="{Binding CartContent}" AutoGenerateColumns="True"/>
+	<Grid Margin="20">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<Border Grid.Row="0" Margin="5" Background="LightGreen" CornerRadius="5" HorizontalAlignment="Left">
+			<StackPanel Orientation="Horizontal" Margin="10">
+				<TextBlock Text="Всего товаров: "/>
+				<TextBlock Text="{Binding CartListCount}"/>
+			</StackPanel>
+		</Border>
+
+		<Border Grid.Row="1" Margin="5" Background="LightGreen" CornerRadius="5">
+			<ScrollViewer Margin="5" Grid.Row="1" VerticalScrollBarVisibility="Auto">
+				<DataGrid ItemsSource="{Binding CartContent}" AutoGenerateColumns="False" HorizontalAlignment="Left">
+					<DataGrid.Columns>
+						<DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
+						<DataGridTextColumn Header="Кол-во" Binding="{Binding Count}"/>
+					</DataGrid.Columns>
+				</DataGrid>
+			</ScrollViewer>
+		</Border>
 	</Grid>
+
+
 </UserControl>

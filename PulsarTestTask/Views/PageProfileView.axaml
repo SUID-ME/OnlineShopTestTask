@@ -18,6 +18,31 @@
 				<ColumnDefinition Width="60*"/>
 			</Grid.ColumnDefinitions>
 
+			<StackPanel Grid.Column="0">
+				<StackPanel.Styles>
+					<Style Selector="StackPanel > Border">
+						<Setter Property="Margin" Value="5"/>
+						<Setter Property="BorderBrush" Value="Gray"/>
+						<Setter Property="BorderThickness" Value="1"/>
+						<Setter Property="CornerRadius" Value="10"/>
+						<Setter Property="Padding" Value="5"/>
+						<Setter Property="Background" Value="LightGreen"/>
+						<Setter Property="HorizontalAlignment" Value="Center"/>
+					</Style>
+				</StackPanel.Styles>
+				<Border>
+					<Image Source="{Binding UserInfo.Bitmap}" Margin="5" MinHeight="200" MinWidth="200"/>
+				</Border>
+				<Border>
+					<StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Center">
+						<TextBlock Text="{Binding UserInfo.UserFirstName.AttributeValue}"/>
+						<TextBlock Text="{Binding UserInfo.UserSecondName.AttributeValue}"/>
+						<TextBlock Text="{Binding UserInfo.UserAge.AttributeValue}"/>
+					</StackPanel>
+				</Border>
+			</StackPanel>
+
+			<!--#region User Info-->
 			<StackPanel Grid.Column="1">
 				<StackPanel.Styles>
 					<Style Selector="StackPanel > Border">
@@ -30,29 +55,29 @@
 					</Style>
 				</StackPanel.Styles>
 
-				<!-- Elements -->
 				<Border>
 					<ItemsControl>
-						<view:ProfileAttributeView DataContext="{Binding UserFirstName}"/>
-						<view:ProfileAttributeView DataContext="{Binding UserSecondName}"/>
-						<view:ProfileAttributeView DataContext="{Binding UserSurname}"/>
+						<view:ProfileAttributeView DataContext="{Binding UserInfo.UserFirstName}"/>
+						<view:ProfileAttributeView DataContext="{Binding UserInfo.UserSecondName}"/>
+						<view:ProfileAttributeView DataContext="{Binding UserInfo.UserSurname}"/>
 					</ItemsControl>
 				</Border>
 
 				<Border>
 					<ItemsControl>
-						<view:ProfileAttributeView DataContext="{Binding UserPhoneNumber}"/>
-						<view:ProfileAttributeView DataContext="{Binding UserEmail}"/>
+						<view:ProfileAttributeView DataContext="{Binding UserInfo.UserPhoneNumber}"/>
+						<view:ProfileAttributeView DataContext="{Binding UserInfo.UserEmail}"/>
 					</ItemsControl>
 				</Border>
 
 				<Border>
 					<ItemsControl>
-						<view:ProfileAttributeView DataContext="{Binding UserAge}"/>
-						<view:ProfileAttributeView DataContext="{Binding UserBalance}"/>
+						<view:ProfileAttributeView DataContext="{Binding UserInfo.UserAge}"/>
+						<view:ProfileAttributeView DataContext="{Binding UserInfo.UserBalance}"/>
 					</ItemsControl>
 				</Border>
 			</StackPanel>
+			<!--#endregion User Info-->
 		</Grid>
 	</ScrollViewer>
 </UserControl>

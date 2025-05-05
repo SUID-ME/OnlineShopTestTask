@@ -18,7 +18,14 @@
 
 		<TextBlock Grid.Column="0" Text="{Binding AttributeName}" VerticalAlignment="Center"/>
 		<TextBox Grid.Column="1" Text="{Binding AttributeValue}"
-				 VerticalAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" Background="Transparent"
-				 IsReadOnly="{Binding IsReadOnly}"/>
+				 VerticalAlignment="Center" VerticalContentAlignment="Center"
+				 BorderThickness="0" Background="Transparent"
+				 IsEnabled="{Binding IsEnabled}">
+			<TextBox.Styles>
+				<Style Selector="TextBox:disabled">
+					<Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}"/>
+				</Style>
+			</TextBox.Styles>
+		</TextBox>
 	</Grid>
 </UserControl>

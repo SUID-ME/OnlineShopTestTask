@@ -9,7 +9,7 @@
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="PulsarTestTask"
-		MinWidth="400" MinHeight="300">
+		MinWidth="560" MinHeight="300">
 
 	<Design.DataContext>
         <vm:MainWindowViewModel/>

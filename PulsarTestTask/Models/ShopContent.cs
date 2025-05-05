@@ -19,25 +19,25 @@ namespace PulsarTestTask.Models
                 {
                     Name = "Бананы",
                     Count = 10,
-                    URL = "http://organicmarket.ru/files/images/product/large_image/0/3399/banani-spelie_6333fc8346a4d.jpeg"
+                    Url = "http://organicmarket.ru/files/images/product/large_image/0/3399/banani-spelie_6333fc8346a4d.jpeg"
                 },
                 new ()
                 {
                     Name = "Яблоки",
                     Count = 20,
-                    URL = "https://eda.show/content/images/2022/09/scale_1200--9--7.jpg"
+                    Url = "https://eda.show/content/images/2022/09/scale_1200--9--7.jpg"
                 },
                 new ()
                 {
                     Name = "Груши",
                     Count = 30,
-                    URL = "https://images.thesymbol.ru/upload/img_cache/93f/93f6cb03d210477b4a82ba2617e6fbd4_cropped_510x378.webp"
+                    Url = "https://images.thesymbol.ru/upload/img_cache/93f/93f6cb03d210477b4a82ba2617e6fbd4_cropped_510x378.webp"
                 },
                 new()
                 {
                     Name = "Помидоры",
                     Count = 40,
-                    URL = "https://s1.1zoom.ru/big0/359/Tomatoes_Wicker_basket_497082.jpg"
+                    Url = "https://s1.1zoom.ru/big0/359/Tomatoes_Wicker_basket_497082.jpg"
                 }
             ];
         }

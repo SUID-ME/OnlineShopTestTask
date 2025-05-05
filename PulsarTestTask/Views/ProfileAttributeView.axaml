@@ -3,6 +3,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="using:PulsarTestTask.ViewModels"
+			 xmlns:interactivity="using:Avalonia.Xaml.Interactivity"
+             xmlns:local="using:PulsarTestTask.ControlBehavior"
+			 xmlns:behaviors="using:Avalonia.Xaml.Interactions.Core"
+			 xmlns:custom="clr-namespace:PulsarTestTask.ControlBehavior"
              mc:Ignorable="d" d:DesignWidth="150" d:DesignHeight="50"
              x:Class="PulsarTestTask.Views.ProfileAttributeView"
 			 x:DataType="vm:ProfileAttributeVM">
@@ -17,15 +21,14 @@
 		</Grid.ColumnDefinitions>
 
 		<TextBlock Grid.Column="0" Text="{Binding AttributeName}" VerticalAlignment="Center"/>
-		<TextBox Grid.Column="1" Text="{Binding AttributeValue}"
+		<custom:CustomTextBox Grid.Column="1" Text="{Binding AttributeValue}"
 				 VerticalAlignment="Center" VerticalContentAlignment="Center"
-				 BorderThickness="0" Background="Transparent"
-				 IsEnabled="{Binding IsEnabled}">
+				 BorderThickness="0" Background="Transparent">
 			<TextBox.Styles>
 				<Style Selector="TextBox:disabled">
 					<Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}"/>
 				</Style>
 			</TextBox.Styles>
-		</TextBox>
+		</custom:CustomTextBox>
 	</Grid>
 </UserControl>

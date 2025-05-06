@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="using:PulsarTestTask.ViewModels"
 			 xmlns:interactivity="using:Avalonia.Xaml.Interactivity"
-             xmlns:local="using:PulsarTestTask.ControlBehavior"
+             xmlns:localbehaviors="using:PulsarTestTask.Behaviors"
 			 xmlns:behaviors="using:Avalonia.Xaml.Interactions.Core"
 			 xmlns:custom="clr-namespace:PulsarTestTask.ControlBehavior"
              mc:Ignorable="d" d:DesignWidth="150" d:DesignHeight="50"
@@ -26,7 +26,8 @@
 		<TextBox Grid.Column="1" Text="{Binding AttributeValue}"
 				 VerticalAlignment="Center" VerticalContentAlignment="Center"
 				 BorderThickness="0" Background="Transparent" 
-				 IsEnabled="{Binding IsEnabled}" Watermark="{Binding Watermark}">
+				 IsEnabled="{Binding IsEnabled}" Watermark="{Binding Watermark}"
+				 ContextMenu="{x:Null}">
 			<TextBox.Styles>
 				<Style Selector="TextBox:disabled">
 					<Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}"/>
@@ -37,21 +38,19 @@
 				</Style>
 			</TextBox.Styles>
 			<TextBox.ContextMenu>
-				<ContextMenu>
-					<MenuItem Header="Вкл/Выкл редактирование"
-							  Command="{Binding ToggleTextBoxCommand}"/>
-				</ContextMenu>
+				<ContextMenu IsVisible="False"/>
 			</TextBox.ContextMenu>
+			
+			<Interaction.Behaviors>
+				<localbehaviors:RightClickBehavior Command="{Binding ToggleTextBoxCommand}"/>
+			</Interaction.Behaviors>
 		</TextBox>
 		
 		<!--Вспомогательная панель-->
 		<Panel Grid.Column="1" Background="Transparent" IsVisible="{Binding !IsEnabled}">
-			<Panel.ContextMenu>
-				<ContextMenu>
-					<MenuItem Header="Вкл/Выкл редактирование"
-							  Command="{Binding ToggleTextBoxCommand}"/>
-				</ContextMenu>
-			</Panel.ContextMenu>
+			<Interaction.Behaviors>
+				<localbehaviors:RightClickBehavior Command="{Binding ToggleTextBoxCommand}"/>
+			</Interaction.Behaviors>
 		</Panel>
 	</Grid>
 </UserControl>

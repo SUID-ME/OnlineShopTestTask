@@ -18,15 +18,15 @@ namespace PulsarTestTask.ViewModels
 
     public class UserInfo() : ReactiveObject, IUrl
     {
-        public ProfileAttributeVM UserFirstName { get; set; } = new ProfileAttributeVM("Имя", "Иван");
-        public ProfileAttributeVM UserSecondName { get; set; } = new ProfileAttributeVM("Фамилия", "Иванов");
-        public ProfileAttributeVM UserSurname { get; set; } = new ProfileAttributeVM("Отчество", "Иванович");
+        public ProfileAttributeVM UserFirstName { get; set; } = new ("Имя", "Иван");
+        public ProfileAttributeVM UserSecondName { get; set; } = new ("Фамилия", "Иванов");
+        public ProfileAttributeVM UserSurname { get; set; } = new ("Отчество", "Иванович");
 
-        public ProfileAttributeVM UserPhoneNumber { get; set; } = new ProfileAttributeVM("Телефон", "8-123-444-55-66");
-        public ProfileAttributeVM UserEmail { get; set; } = new ProfileAttributeVM("email", "ivan@test.com");
+        public ProfileAttributePhonelVM UserPhoneNumber { get; set; } = new ("Телефон", "8-123-444-55-66");
+        public ProfileAttributeEmailVM UserEmail { get; set; } = new ("email", "ivan@test.com");
 
-        public ProfileAttributeVM UserAge { get; set; } = new ProfileAttributeVM("Возраст", "28 лет");
-        public ProfileAttributeVM UserBalance { get; set; } = new ProfileAttributeVM("Баланс", "4000р");
+        public ProfileAttributeVM UserAge { get; set; } = new ("Возраст", "28 лет");
+        public ProfileAttributeVM UserBalance { get; set; } = new ("Баланс", "4000р");
 
         [Reactive]
         public Bitmap? Bitmap { get; set; }

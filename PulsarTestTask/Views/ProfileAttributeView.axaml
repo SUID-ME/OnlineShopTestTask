@@ -19,16 +19,21 @@
 			<ColumnDefinition Width="35*"/>
 			<ColumnDefinition Width="65*"/>
 		</Grid.ColumnDefinitions>
-		<TextBlock Grid.Column="0" Text="{Binding AttributeName}" VerticalAlignment="Center">
-			
-		</TextBlock>
+		<!--Имя параметра--> 
+		<TextBlock Grid.Column="0" Text="{Binding AttributePresent}" VerticalAlignment="Center"/>
+		
+		<!--Значение параметра-->
 		<TextBox Grid.Column="1" Text="{Binding AttributeValue}"
 				 VerticalAlignment="Center" VerticalContentAlignment="Center"
 				 BorderThickness="0" Background="Transparent" 
-				 IsEnabled="{Binding IsEnabled}">
+				 IsEnabled="{Binding IsEnabled}" Watermark="{Binding Watermark}">
 			<TextBox.Styles>
 				<Style Selector="TextBox:disabled">
 					<Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}"/>
+				</Style>
+				<Style Selector="TextBox:invalid">
+					<Setter Property="Background" Value="#FFF0F0"/>
+					<Setter Property="BorderBrush" Value="Red"/>
 				</Style>
 			</TextBox.Styles>
 			<TextBox.ContextMenu>
@@ -38,6 +43,8 @@
 				</ContextMenu>
 			</TextBox.ContextMenu>
 		</TextBox>
+		
+		<!--Вспомогательная панель-->
 		<Panel Grid.Column="1" Background="Transparent" IsVisible="{Binding !IsEnabled}">
 			<Panel.ContextMenu>
 				<ContextMenu>

@@ -19,16 +19,32 @@
 			<ColumnDefinition Width="35*"/>
 			<ColumnDefinition Width="65*"/>
 		</Grid.ColumnDefinitions>
-
-		<TextBlock Grid.Column="0" Text="{Binding AttributeName}" VerticalAlignment="Center"/>
-		<custom:CustomTextBox Grid.Column="1" Text="{Binding AttributeValue}"
+		<TextBlock Grid.Column="0" Text="{Binding AttributeName}" VerticalAlignment="Center">
+			
+		</TextBlock>
+		<TextBox Grid.Column="1" Text="{Binding AttributeValue}"
 				 VerticalAlignment="Center" VerticalContentAlignment="Center"
-				 BorderThickness="0" Background="Transparent">
+				 BorderThickness="0" Background="Transparent" 
+				 IsEnabled="{Binding IsEnabled}">
 			<TextBox.Styles>
 				<Style Selector="TextBox:disabled">
 					<Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}"/>
 				</Style>
 			</TextBox.Styles>
-		</custom:CustomTextBox>
+			<TextBox.ContextMenu>
+				<ContextMenu>
+					<MenuItem Header="Вкл/Выкл редактирование"
+							  Command="{Binding ToggleTextBoxCommand}"/>
+				</ContextMenu>
+			</TextBox.ContextMenu>
+		</TextBox>
+		<Panel Grid.Column="1" Background="Transparent" IsVisible="{Binding !IsEnabled}">
+			<Panel.ContextMenu>
+				<ContextMenu>
+					<MenuItem Header="Вкл/Выкл редактирование"
+							  Command="{Binding ToggleTextBoxCommand}"/>
+				</ContextMenu>
+			</Panel.ContextMenu>
+		</Panel>
 	</Grid>
 </UserControl>

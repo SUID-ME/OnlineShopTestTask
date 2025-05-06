@@ -1,9 +1,8 @@
-﻿using Avalonia.Controls;
-using Avalonia;
+﻿using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Xaml.Interactivity;
-using System.Reactive.Linq;
 using System.Windows.Input;
 
 namespace PulsarTestTask.Behaviors;

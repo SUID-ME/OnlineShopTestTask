@@ -3,10 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="using:PulsarTestTask.ViewModels"
-			 xmlns:interactivity="using:Avalonia.Xaml.Interactivity"
              xmlns:localbehaviors="using:PulsarTestTask.Behaviors"
-			 xmlns:behaviors="using:Avalonia.Xaml.Interactions.Core"
-			 xmlns:custom="clr-namespace:PulsarTestTask.ControlBehavior"
              mc:Ignorable="d" d:DesignWidth="150" d:DesignHeight="50"
              x:Class="PulsarTestTask.Views.ProfileAttributeView"
 			 x:DataType="vm:ProfileAttributeVM">

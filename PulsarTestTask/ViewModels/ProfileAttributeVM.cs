@@ -1,11 +1,8 @@
 ﻿using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
-using System.Reactive;
 using ReactiveUI.Validation.Extensions;
 using ReactiveUI.Validation.Helpers;
-using System.ComponentModel.DataAnnotations;
-using static System.Net.Mime.MediaTypeNames;
-using System;
+using System.Reactive;
 
 namespace PulsarTestTask.ViewModels
 {

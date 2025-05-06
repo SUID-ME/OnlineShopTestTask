@@ -32,7 +32,7 @@
 					</Style>
 				</StackPanel.Styles>
 				<Border>
-					<Image Source="{Binding UserInfo.Bitmap}" Margin="5" MinHeight="200" MinWidth="200"/>
+					<Image Source="{Binding UserInfo.Bitmap}" Margin="5" MinHeight="150" MinWidth="150"/>
 				</Border>
 				<Border>
 					<WrapPanel>

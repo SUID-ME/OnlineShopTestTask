@@ -4,9 +4,13 @@
     {
         public MainWindowViewModel()
         {
-            NavigationVM = new();
+            NavigationMenuVM = new();
+            NavigationTitleVM = new(NavigationMenuVM);
+            PageContentVM = new(NavigationMenuVM);
         }
 
-        public NavigationVM NavigationVM { get; set; }
+        public NavigationMenuVM NavigationMenuVM { get; }
+        public PageContentVM PageContentVM { get; }
+        public NavigationTitleVM NavigationTitleVM { get; }
     }
 }

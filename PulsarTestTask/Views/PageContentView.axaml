@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:views="using:PulsarTestTask.Views"
+			 xmlns:vm="using:PulsarTestTask.ViewModels"
+             x:Class="PulsarTestTask.Views.PageContentView"
+			 x:DataType="vm:PageContentVM">
+
+	<Design.DataContext>
+		<vm:PageContentVM/>
+	</Design.DataContext>
+	
+	<Border Background="#aca1d7" CornerRadius="10">
+		<ContentControl Content="{Binding CurrentVM}">
+			<ContentControl.DataTemplates>
+				<DataTemplate DataType="{x:Type vm:PageShopVM}">
+					<views:PageShopView/>
+				</DataTemplate>
+				<DataTemplate DataType="{x:Type vm:PageShoppingCartVM}">
+					<views:PageShoppingCartView/>
+				</DataTemplate>
+				<DataTemplate DataType="{x:Type vm:PageProfileVM}">
+					<views:PageProfileView/>
+				</DataTemplate>
+			</ContentControl.DataTemplates>
+		</ContentControl>
+	</Border>
+</UserControl>

@@ -5,11 +5,15 @@
 			 xmlns:vm="using:PulsarTestTask.ViewModels"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="100"
              x:Class="PulsarTestTask.Views.NavigationTitleView"
-			 x:DataType="vm:NavigationVM">
+			 x:DataType="vm:NavigationTitleVM">
+	<Design.DataContext>
+		<vm:NavigationTitleVM/>
+	</Design.DataContext>
+	
 	<Border CornerRadius="10" Background="PeachPuff">
 		<StackPanel Orientation="Horizontal" Margin="10" Spacing="5" VerticalAlignment="Center">
 			<TextBlock Text="Выбранная страница:" FontSize="16"/>
-			<TextBlock Text="{Binding SelectedItem.Title}" FontSize="16"/>
+			<TextBlock Text="{Binding Title}" FontSize="16"/>
 		</StackPanel>
 	</Border>
 </UserControl>

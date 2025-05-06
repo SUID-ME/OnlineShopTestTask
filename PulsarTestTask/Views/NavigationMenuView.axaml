@@ -3,12 +3,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="using:PulsarTestTask.ViewModels"
-			 x:DataType="vm:NavigationVM"
+			 x:DataType="vm:NavigationMenuVM"
              mc:Ignorable="d" d:DesignWidth="150" d:DesignHeight="450"
              x:Class="PulsarTestTask.Views.NavigationMenuView"
 			 x:Name="NavControl">
 	<Design.DataContext>
-		<vm:NavigationVM IsExpanded="True"/>
+		<vm:NavigationMenuVM IsExpanded="True"/>
 	</Design.DataContext>
 
 	<Border CornerRadius="5" Background="LightBlue">

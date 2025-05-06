@@ -7,7 +7,7 @@ using System.Reactive.Linq;
 
 namespace PulsarTestTask.ViewModels
 {
-    public class NavigationVM : ViewModelBase
+    public class NavigationMenuVM : ViewModelBase
     {
         #region BindingItems
         [Reactive] public bool IsExpanded { get; private set; }
@@ -20,7 +20,7 @@ namespace PulsarTestTask.ViewModels
         #endregion BindingItems
 
         #region Constructor
-        public NavigationVM()
+        public NavigationMenuVM()
         {
             ToggleMenuCommand = ReactiveCommand.Create(() =>
                 {

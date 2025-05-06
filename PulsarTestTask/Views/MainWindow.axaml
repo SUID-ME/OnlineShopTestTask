@@ -16,22 +16,8 @@
     </Design.DataContext>
 	
 	<DockPanel>
-		<views:NavigationMenuView DataContext="{Binding NavigationVM}" DockPanel.Dock="Left"/>
-		<views:NavigationTitleView DataContext="{Binding NavigationVM}" DockPanel.Dock="Top"/>
-		<Border Background="#aca1d7" CornerRadius="10">
-			<ContentControl Content="{Binding NavigationVM.SelectedItem.ViewModel}">
-				<ContentControl.DataTemplates>
-					<DataTemplate DataType="{x:Type vm:PageShopVM}">
-						<views:PageShopView/>
-					</DataTemplate>
-					<DataTemplate DataType="{x:Type vm:PageShoppingCartVM}">
-						<views:PageShoppingCartView/>
-					</DataTemplate>
-					<DataTemplate DataType="{x:Type vm:PageProfileVM}">
-						<views:PageProfileView/>
-					</DataTemplate>
-				</ContentControl.DataTemplates>
-			</ContentControl>
-		</Border>
+		<views:NavigationMenuView DataContext="{Binding NavigationMenuVM}" DockPanel.Dock="Left"/>
+		<views:NavigationTitleView DataContext="{Binding NavigationTitleVM}" DockPanel.Dock="Top"/>
+		<views:PageContentView DataContext="{Binding PageContentVM}" DockPanel.Dock="Bottom"/>
 	</DockPanel>
 </Window>

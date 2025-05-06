@@ -28,6 +28,7 @@ namespace PulsarTestTask.ViewModels
         public ProfileAttributeVM UserAge { get; set; } = new ("Возраст", "28 лет");
         public ProfileAttributeVM UserBalance { get; set; } = new ("Баланс", "4000р");
 
+
         [Reactive]
         public Bitmap? Bitmap { get; set; }
         public string Url { get; set; } = "https://i.pinimg.com/736x/2f/90/c1/2f90c1e9fc45169c0f2cc0dfe88e73a5.jpg";

@@ -18,6 +18,7 @@
 				<ColumnDefinition Width="60*"/>
 			</Grid.ColumnDefinitions>
 
+			<!--Main Info-->
 			<StackPanel Grid.Column="0">
 				<StackPanel.Styles>
 					<Style Selector="StackPanel > Border">
@@ -34,15 +35,15 @@
 					<Image Source="{Binding UserInfo.Bitmap}" Margin="5" MinHeight="200" MinWidth="200"/>
 				</Border>
 				<Border>
-					<StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Center">
-						<TextBlock Text="{Binding UserInfo.UserFirstName.AttributeValue}"/>
-						<TextBlock Text="{Binding UserInfo.UserSecondName.AttributeValue}"/>
-						<TextBlock Text="{Binding UserInfo.UserAge.AttributeValue}"/>
-					</StackPanel>
+					<WrapPanel>
+						<TextBlock Text="{Binding UserInfo.UserFirstName.AttributeValue}" TextWrapping="Wrap" Margin="5"/>
+						<TextBlock Text="{Binding UserInfo.UserSecondName.AttributeValue}" TextWrapping="Wrap" Margin="5"/>
+						<TextBlock Text="{Binding UserInfo.UserAge.AttributeValue}" TextWrapping="Wrap" Margin="5"/>
+					</WrapPanel>
 				</Border>
 			</StackPanel>
 
-			<!--#region User Info-->
+			<!--All User Info-->
 			<StackPanel Grid.Column="1">
 				<StackPanel.Styles>
 					<Style Selector="StackPanel > Border">
